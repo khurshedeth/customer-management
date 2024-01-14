@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React, { useState, useEffect } from "react";
+import CustomerPage from "./page/CustomerPage";
+import Sidebar from "./component/Sidebar";
+import "./App.css";
 function App() {
+  const [customers, setCustomers] = useState([]);
+  const apiUrl = "https://dummyjson.com/users";
+
+  const getData = async () => {
+    const response = await fetch(apiUrl);
+    const data = await response.json();
+    setCustomers(data.users);
+  };
+  console.log(customers);
+  useEffect(() => {
+    getData();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className=" flex  h-full w-full">
+      <div>
+        <Sidebar />
+      </div>
+      <div>
+        <div>
+          <CustomerPage customers={customers} setCustomers={setCustomers} />
+        </div>
+      </div>
     </div>
   );
 }
