@@ -28,12 +28,17 @@ function CustomerPage({ customers, setCustomers }) {
   };
 
   const handleSearch = (query) => {
-    const filtered = customers.filter(
-      (customer) =>
-        customer.firstName.toLowerCase().includes(query.toLowerCase()) ||
-        customer.id.toString().includes(query)
-    );
-    setFilteredCustomers(filtered);
+    if (query.trim() === "") {
+      // If the search query is empty, reset filteredCustomers to the original list
+      setFilteredCustomers(customers);
+    } else {
+      const filtered = customers.filter(
+        (customer) =>
+          customer.firstName.toLowerCase().includes(query.toLowerCase()) ||
+          customer.id.toString().includes(query)
+      );
+      setFilteredCustomers(filtered);
+    }
   };
 
   const handleDeleteCustomer = (customerId) => {

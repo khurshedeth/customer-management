@@ -1,4 +1,5 @@
 import React from "react";
+import { MdOutlineDelete } from "react-icons/md";
 
 function CustomerTable({ filteredCustomers, handleDeleteCustomer }) {
   return (
@@ -20,8 +21,11 @@ function CustomerTable({ filteredCustomers, handleDeleteCustomer }) {
               <td className="py-2 px-2">{customer.email}</td>
               <td className="py-2 px-2">{customer.phone}</td>
               <td>
-                <button onClick={() => handleDeleteCustomer(customer.id)}>
-                  delete
+                <button
+                  onClick={() => handleDeleteCustomer(customer.id)}
+                  className=" text-red-500"
+                >
+                  <MdOutlineDelete size={20} />
                 </button>
               </td>
             </tr>
