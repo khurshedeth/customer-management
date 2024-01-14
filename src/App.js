@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import CustomerPage from "./page/CustomerPage";
 import Sidebar from "./component/Sidebar";
 import "./App.css";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 function App() {
   const [customers, setCustomers] = useState([]);
   const apiUrl = "https://dummyjson.com/users";
@@ -18,6 +21,7 @@ function App() {
 
   return (
     <div className=" flex  h-full w-full">
+      <ToastContainer />
       <div>
         <Sidebar />
       </div>

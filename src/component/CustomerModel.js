@@ -1,13 +1,17 @@
 import React, { useState } from "react";
 
-function AddCustomerModal({ setShowModal, handleAddCustomer, customers }) {
+function AddCustomerModal({
+  setShowModal,
+  handleAddCustomer,
+  filteredCustomers,
+}) {
   const [firstName, setFirstName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
 
   const handleSubmit = () => {
     const newCustomer = {
-      id: customers.length + 1,
+      id: filteredCustomers.length + 1,
       firstName,
       email,
       phone,

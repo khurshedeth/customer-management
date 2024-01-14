@@ -1,11 +1,20 @@
 import { IoIosArrowForward } from "react-icons/io";
 import { IoNotifications } from "react-icons/io5";
 import Images from "../assets/crop-circle.png";
+import React, { useState } from "react";
 
-function Navbar({ customers }) {
+function Navbar({ handleSearch, filteredCustomers }) {
+  const [searchInput, setSearchInput] = useState("");
+
+  const handleInputChange = (e) => {
+    const query = e.target.value;
+    setSearchInput(query);
+    handleSearch(query);
+  };
+
   return (
     <div className="flex justify-between items-center border-b-2 py-4">
-      <div className="flex gap-2 items-center capitalize">
+      <div className="flex gap-2 items-center ">
         <span>Application</span>
         <span>
           <IoIosArrowForward />
@@ -17,10 +26,12 @@ function Navbar({ customers }) {
           <input
             className="outline-none px-2"
             placeholder="Search by name and id"
+            value={searchInput}
+            onChange={handleInputChange}
           />
         </div>
         <div>
-          <IoNotifications />
+          <IoNotifications size={25} />
         </div>
         <div>
           <img src={Images} alt="" className=" w-10" />

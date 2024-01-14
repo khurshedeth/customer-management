@@ -12,7 +12,7 @@ function Sidebar() {
       <div className=" border-b-2 border-gray-400 w-full p-4">Logo</div>
       <div className=" flex gap-3 justify-center items-center hover:scale-105">
         <FaHouseUser />
-        <button>Dashboardasborad</button>
+        <button>Dashboard</button>
       </div>
       <div className=" flex gap-3 justify-center items-center hover:scale-105">
         <FaUser />
