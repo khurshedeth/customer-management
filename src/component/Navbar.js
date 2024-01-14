@@ -1,10 +1,11 @@
 import { IoIosArrowForward } from "react-icons/io";
 import { IoNotifications } from "react-icons/io5";
+import Images from "../assets/crop-circle.png";
 
 function Navbar({ customers }) {
   return (
     <div className="flex justify-between items-center border-b-2 py-4">
-      <div className="flex gap-2 items-center">
+      <div className="flex gap-2 items-center capitalize">
         <span>Application</span>
         <span>
           <IoIosArrowForward />
@@ -22,7 +23,7 @@ function Navbar({ customers }) {
           <IoNotifications />
         </div>
         <div>
-          <img alt="" />
+          <img src={Images} alt="" className=" w-10" />
         </div>
       </div>
     </div>

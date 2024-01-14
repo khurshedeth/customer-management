@@ -8,11 +8,11 @@ import { BiSolidReport } from "react-icons/bi";
 
 function Sidebar() {
   return (
-    <div className=" flex   flex-col items-start  p-4 gap-4 w-[100%] h-[100vh] bg-cyan-800 text-white text-2xl">
+    <div className=" flex   flex-col items-start  p-4 gap-4 w-[100%] h-[100vh] bg-cyan-800 text-white text-xl">
       <div className=" border-b-2 border-gray-400 w-full p-4">Logo</div>
       <div className=" flex gap-3 justify-center items-center hover:scale-105">
         <FaHouseUser />
-        <button>dasborad</button>
+        <button>Dashboardasborad</button>
       </div>
       <div className=" flex gap-3 justify-center items-center hover:scale-105">
         <FaUser />
@@ -20,7 +20,7 @@ function Sidebar() {
       </div>
       <div className=" flex gap-3 justify-center items-center hover:scale-105 active:red-600">
         <IoCubeOutline />
-        <button>dasborad</button>
+        <button>Dasborad</button>
       </div>
       <div className=" flex gap-3 justify-center items-center hover:scale-105">
         <BiSolidShoppingBags />
@@ -28,7 +28,7 @@ function Sidebar() {
       </div>
       <div className=" flex gap-3 justify-center items-center hover:scale-105">
         <IoSettingsOutline />
-        <button>setting</button>
+        <button>Setting</button>
       </div>
       <div className=" flex gap-3 justify-center items-center hover:scale-105">
         <BiSolidReport />
